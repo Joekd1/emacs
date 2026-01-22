@@ -24,17 +24,31 @@
 
 (add-to-list 'default-frame-alist '(font . "JetBrainsMono Nerd Font 13"))
 
-(use-package catppuccin-theme
+(use-package ef-themes
   :ensure t
   :init
-  (setq catppuccin-flavor 'mocha) ;; Set the flavor before loading theme
-  (setq catppuccin-org-todo-faces t) ;; Enable separate TODO faces
+  ;; This makes the Modus commands listed below consider only the Ef
+  ;; themes.  For an alternative that includes Modus and all
+  ;; derivative themes (like Ef), enable the
+  ;; `modus-themes-include-derivatives-mode' instead.  The manual of
+  ;; the Ef themes has a section that explains all the possibilities:
+  ;;
+  ;; - Evaluate `(info "(ef-themes) Working with other Modus themes or taking over Modus")'
+  ;; - Visit <https://protesilaos.com/emacs/ef-themes#h:6585235a-5219-4f78-9dd5-6a64d87d1b6e>
+  (ef-themes-take-over-modus-themes-mode 1)
+  :bind
+  (("<f5>" . modus-themes-rotate)
+   ("C-<f5>" . modus-themes-select)
+   ("M-<f5>" . modus-themes-load-random))
   :config
-  (load-theme 'catppuccin :no-confirm) ;; Actually load the theme
-					; Make comments italic and more visible.
-  (set-face-attribute 'font-lock-comment-face nil
-                      :foreground (catppuccin-color 'subtext0)
-		      :slant 'italic))
+  ;; All customisations here.
+  (setq modus-themes-mixed-fonts t)
+  (setq modus-themes-italic-constructs t)
+
+  ;; Finally, load your theme of choice (or a random one with
+  ;; `modus-themes-load-random', `modus-themes-load-random-dark',
+  ;; `modus-themes-load-random-light').
+  (modus-themes-load-theme 'ef-elea-dark))
 
 (use-package doom-modeline
   :ensure t
