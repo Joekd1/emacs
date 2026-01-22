@@ -152,7 +152,7 @@ The ef-themes are a collection of light and dark themes for GNU Emacs whose goal
   (use-package breadcrumb
     :ensure t
     :config
-    (setq bredcrumb-mode t))
+    (breadcrumb-mode))
 
 #+end_src
 

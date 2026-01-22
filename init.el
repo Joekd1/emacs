@@ -65,7 +65,7 @@
 (use-package breadcrumb
   :ensure t
   :config
-  (setq bredcrumb-mode t))
+  (breadcrumb-mode))
 
 (require 'package)
 (setq package-archives (append '(("melpa" . "https://melpa.org/packages/")
