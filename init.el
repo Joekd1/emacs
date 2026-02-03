@@ -119,6 +119,12 @@
               :map eshell-hist-mode-map
               ("M-s" . nil)))
 
+(use-package compile
+  :ensure nil
+  :config
+  (setq compilation-scroll-output 1)
+  :hook (compilation-filter . ansi-color-compilation-filter))
+
 (use-package org
   :hook ((org-mode . org-indent-mode)
 	 (org-mode . visual-line-mode)

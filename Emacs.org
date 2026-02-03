@@ -15,6 +15,7 @@
 - [[#which-key][Which Key]]
 - [[#evil-mode][Evil Mode]]
 - [[#terminals][Terminals]]
+  - [[#better-compilation-mode][Better Compilation Mode]]
 - [[#org-mode][Org Mode]]
   - [[#basic-configuration][Basic Configuration]]
   - [[#nicer-headings-bullets][Nicer Headings Bullets]]
@@ -241,6 +242,20 @@ Since I am using the =M-s= prefix for /consult/ related commands, I need to unbi
                 ("M-s" . nil)
                 :map eshell-hist-mode-map
                 ("M-s" . nil)))
+
+#+end_src
+
+** Better Compilation Mode
+
+By default, the compilation mode doesn't show ANSI escape sequences properly. This will fix that.
+
+#+begin_src emacs-lisp
+
+  (use-package compile
+    :ensure nil
+    :config
+    (setq compilation-scroll-output 1)
+    :hook (compilation-filter . ansi-color-compilation-filter))
 
 #+end_src
 
