@@ -246,7 +246,7 @@ Use the function yos-auto-tangle-current-file to add a file to the list.")
   (setq tab-always-indent 'complete)
   (setq corfu-preview-current nil)
   (setq corfu-auto t
-	corfu-auto-delay 0.2
+	corfu-auto-delay 0.1
 	corfu-quit-no-match 'separator))
 
 (use-package cape
