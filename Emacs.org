@@ -16,6 +16,7 @@
 - [[#evil-mode][Evil Mode]]
 - [[#terminals][Terminals]]
   - [[#better-compilation-mode][Better Compilation Mode]]
+- [[#markdown-mode][Markdown Mode]]
 - [[#org-mode][Org Mode]]
   - [[#basic-configuration][Basic Configuration]]
   - [[#nicer-headings-bullets][Nicer Headings Bullets]]
@@ -256,6 +257,15 @@ By default, the compilation mode doesn't show ANSI escape sequences properly. Th
     :config
     (setq compilation-scroll-output 1)
     :hook (compilation-filter . ansi-color-compilation-filter))
+
+#+end_src
+
+* Markdown Mode
+
+#+begin_src emacs-lisp
+
+  (use-package markdown-mode
+    :ensure t)
 
 #+end_src
 

@@ -125,6 +125,9 @@
   (setq compilation-scroll-output 1)
   :hook (compilation-filter . ansi-color-compilation-filter))
 
+(use-package markdown-mode
+  :ensure t)
+
 (use-package org
   :hook ((org-mode . org-indent-mode)
 	 (org-mode . visual-line-mode)
