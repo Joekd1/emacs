@@ -275,6 +275,15 @@ Use the function yos-auto-tangle-current-file to add a file to the list.")
   (delete 'rust treesit-auto-langs)
   (global-treesit-auto-mode))
 
+(use-package rust-mode
+  :ensure t)
+
+(use-package rust-ts-mode
+  :ensure t)
+
+(use-package rust-playground
+  :ensure t)
+
 (use-package yasnippet
   :ensure t) ;; needed by nand2tetris
 

@@ -28,6 +28,7 @@
 - [[#in-buffer-completion][In-buffer completion]]
 - [[#dev][Dev]]
   - [[#tree-sitter-and-treesit-auto][Tree-sitter and treesit-auto]]
+  - [[#rust][Rust]]
   - [[#nand2etris][nand2etris]]
   - [[#nix-mode][nix-mode]]
   - [[#language-servers][Language servers]]
@@ -503,6 +504,21 @@ Emacs 29, while featuring treesit.el and a convenient treesit-install-language-g
     (treesit-auto-add-to-auto-mode-alist 'all)
     (delete 'rust treesit-auto-langs)
     (global-treesit-auto-mode))
+
+#+end_src
+
+** Rust
+
+#+begin_src emacs-lisp
+
+  (use-package rust-mode
+    :ensure t)
+
+  (use-package rust-ts-mode
+    :ensure t)
+
+  (use-package rust-playground
+    :ensure t)
 
 #+end_src
 
